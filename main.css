@@ -8,6 +8,16 @@ header {
 	text-align: center;
 }
 
+i.fa {
+	color: rgba(255, 255, 255, 0.5);
+	margin: auto 0.5em;
+	font-size: 24px;
+}
+
+i.fa:hover {
+	color: inherit;
+}
+
 main {
 	margin: auto;
 	padding: 1em;
