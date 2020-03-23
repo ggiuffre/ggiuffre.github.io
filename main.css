@@ -1,6 +1,6 @@
 body {
-	background-color: #232323;
-	color: #EEE8E8;
+	color: #232323;
+	background-color: #DDDADA;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -9,13 +9,14 @@ header {
 }
 
 i.fa {
-	color: rgba(255, 255, 255, 0.5);
+	color: inherit;
+	opacity: 0.5;
 	margin: auto 0.5em;
 	font-size: 24px;
 }
 
 i.fa:hover {
-	color: inherit;
+	opacity: 1;
 }
 
 main {
@@ -38,13 +39,13 @@ a:hover {
 }
 
 ul.boxes li {
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: rgba(250, 255, 255, 0.25);
 	padding: 1em;
 	border-radius: 0.3em;
 }
 
 .clickable:hover {
-	background-color: rgba(0, 0, 0, 0.4);
+	background-color: rgba(250, 255, 255, 0.45);
 }
 
 ul.boxes {
