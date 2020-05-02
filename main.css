@@ -2,31 +2,46 @@ body {
 	color: #232323;
 	background-color: #EEEBEB;
 	font-family: 'Open Sans', sans-serif;
+	margin: 0;
 }
 
 header {
-	text-align: center;
+	height: 27.6vh;
+	padding-top: 10.6vh;
+	margin: auto;
+	max-width: 35em;
 }
 
-i.fa {
+@media only screen and (max-width: 600px) {
+	header {
+		text-align: center;
+	}
+}
+
+i.fab, i.fas {
 	color: inherit;
-	opacity: 0.5;
+	opacity: 0.6;
 	margin: auto 0.5em;
 	font-size: 24px;
 }
 
-i.fa:hover {
+i.fas {
+	font-size: 20px;
+	opacity: 0.3;
+}
+
+i.fab:hover {
 	opacity: 1;
 }
 
 main {
+	padding: 0 1em;
 	margin: auto;
-	padding: 1em;
 	max-width: 35em;
 }
 
 article {
-	margin-bottom: 5em;
+	margin-bottom: 7em;
 }
 
 a {
