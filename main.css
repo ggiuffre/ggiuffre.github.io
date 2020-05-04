@@ -1,6 +1,6 @@
 body {
 	color: #232323;
-	background-color: #EEEBEB;
+	background-color: #F8F8F8;
 	font-family: 'Open Sans', sans-serif;
 	margin: 0;
 }
@@ -19,15 +19,18 @@ header {
 }
 
 i.fab, i.fas {
-	color: inherit;
-	opacity: 0.6;
+	opacity: 0.75;
 	margin: auto 0.5em;
 	font-size: 24px;
 }
 
+i.fab {
+	color: rgb(0, 150, 189);
+}
+
 i.fas {
 	font-size: 20px;
-	opacity: 0.3;
+	opacity: 0.38;
 }
 
 i.fab:hover {
@@ -53,30 +56,33 @@ a:hover {
 	text-decoration: underline;
 }
 
-ul.boxes li {
-	background-color: rgba(250, 255, 255, 0.33);
-	padding: 1em;
-	border-radius: 0.3em;
-}
-
-.clickable:hover {
-	background-color: rgba(250, 255, 255, 0.66);
-}
-
 ul.boxes {
 	padding-left: 0;
 }
 
 ul.boxes li {
+	padding: 1em;
 	width: 90%;
 	margin-bottom: 1em;
 	position: relative;
 	list-style-type: none;
+	border-radius: 0.3em;
+	border-style: solid;
+	border-width: 1.5px;
+	border-color: rgb(140, 150, 160);
+}
+
+ul.boxes li.clickable {
+	border-color: rgba(0, 150, 189, 0.5);
+}
+
+ul.boxes li.clickable:hover {
+	border-color: rgb(242, 216, 5);
 }
 
 ul.boxes li a span {
 	position: absolute; 
-	width: 90%;
+	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
