@@ -43,7 +43,13 @@ main {
 }
 
 article {
-	margin-bottom: 7em;
+	margin: 3em auto;
+}
+
+@media only screen and (min-width: 600px) {
+	article {
+		margin: 5em auto;
+	}
 }
 
 a {
@@ -95,3 +101,45 @@ ul.boxes li a span {
 ul.boxes li a:hover {
 	text-decoration: none;
 }
+
+/*@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #121212;
+		color: white;
+	}
+
+	article {
+		margin: 3em auto;
+		padding: 1em;
+		border-radius: 0.5em;
+	}
+
+	@media only screen and (min-width: 600px) {
+		article {
+			margin: 5em auto;
+			padding: 1em;
+		}
+	}
+
+	i.fab, p:hover > a {
+		color: #BB86FC;
+		opacity: 1;
+	}
+
+	i.fab:hover {
+		color: #03DAC5;
+		opacity: 1;
+	}
+
+	article, ul.boxes li.clickable, ul.boxes li {
+		border-color: transparent;
+		background-color: rgba(255, 255, 255, 0.05);
+		box-shadow: 0.8px 0.7px 0.9px black;
+	}
+
+	ul.boxes li.clickable:hover {
+		border-color: transparent;
+		background-color: rgba(255, 255, 255, 0.1);
+		box-shadow: 0.8px 0.7px 1.8px black;
+	}
+}*/
