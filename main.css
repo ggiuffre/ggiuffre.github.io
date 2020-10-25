@@ -71,10 +71,16 @@ i.fab:hover {
 main {
 	margin: auto;
 	max-width: 37em;
+	margin-bottom: 10em;
+}
+
+main > p {
+	margin-left: 1.5em;
+	margin-right: 1em;
 }
 
 article {
-	margin: 3em 0.75em;
+	margin: 3em 0.5em;
 	padding: 1em;
 	border-radius: 0.5em;
 	background-color: var(--material);
@@ -83,7 +89,7 @@ article {
 
 @media only screen and (min-width: 600px) {
 	article {
-		margin: 5em 0.75em;
+		margin: 5em 0.5em;
 	}
 }
 
