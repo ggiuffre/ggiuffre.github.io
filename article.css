@@ -9,3 +9,12 @@ main > h2 {
 	margin-top: 2em;
 	margin-left: 1em;
 }
+
+#home {
+	text-align: center;
+	margin: 2em;
+}
+
+#home a {
+	text-decoration: underline;
+}
