@@ -4,3 +4,8 @@ main {
 	background-color: var(--material);
 	border-radius: 0.5em;
 }
+
+main > h2 {
+	margin-top: 2em;
+	margin-left: 1em;
+}
