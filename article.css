@@ -1,18 +1,18 @@
-main {
-	padding-top: 1em;
-	padding-bottom: 1em;
-	background-color: var(--material);
-	border-radius: 0.5em;
+h1 {
+	font-style: italic;
 }
 
-main > h2 {
-	margin-top: 2em;
-	margin-left: 1em;
+article > h2 {
+	margin-top: 3em;
+}
+
+footer {
+	margin: auto;
+	max-width: 37em;
 }
 
 #home {
 	text-align: center;
-	margin: 2em;
 }
 
 #home a {

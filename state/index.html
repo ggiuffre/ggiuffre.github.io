@@ -17,34 +17,40 @@
 	</header>
 
 	<main>
-		<p>Looking at the various trends in the world of Software Engineering, there seems to be more and more admiration for functional programming. There also seems to be a lot of admiration for artificial neural networks.</p>
-		<p>These two approaches to computation might seem unrelated, but they really are two opposite solutions to the same problem.</p>
+		<article>
+			<p>Looking at the various trends in the world of Software Engineering, there seems to be more and more admiration for functional programming. There also seems to be a lot of admiration for artificial neural networks.</p>
+			<p>These two approaches to computation might seem unrelated, but they really are two opposite solutions to the same problem.</p>
 
-		<h2>Functional programming</h2>
-		<p>Engineers praise purely functional software because it's <strong>easy to read</strong>: you can understand each function by just reading it, without any need to worry about the context in which this function was declared, without worrying about its <em>environment</em>. You don't need to have three other files open to understand what a certain function <code>f</code> is doing, because you can be sure that <code>f</code> doesn't use global variables (there are no global variables, only global constants) and you can be sure that all functions that <code>f</code> depends on are pure.</p>
-		<p>Being easy to read, purely functional programs are also easier to parallelize than their imperative counterparts, and they are easier to optimize (you can cache the output of <code>f(3, 4)</code> for all future invocations of <code>f</code> that use those exact same inputs &mdash; <code>f</code> is deterministic, so it's going to give the same output anyway).</p>
+			<h2>Functional programming</h2>
+			<p>Engineers praise purely functional software because it's <strong>easy to read</strong>: you can understand each function by just reading it, without any need to worry about the context in which this function was declared, without worrying about its <em>environment</em>. You don't need to have three other files open to understand what a certain function <code>f</code> is doing, because you can be sure that <code>f</code> doesn't use global variables (there are no global variables, only global constants) and you can be sure that all functions that <code>f</code> depends on are pure.</p>
+			<p>Being easy to read, purely functional programs are also easier to parallelize than their imperative counterparts, and they are easier to optimize (you can cache the output of <code>f(3, 4)</code> for all future invocations of <code>f</code> that use those exact same inputs &mdash; <code>f</code> is deterministic, so it's going to give the same output anyway).</p>
 
-		<h2>ANNs</h2>
-		<p>While functional programming wants to be stateless, ANNs are completely based on <strong>state</strong>: in an ANN, computation <em>is</em> state.</p>
-		<p>Engineers usually spend some effort into understanding what's happening in a neural network and why it is giving a certain output instead of another. This is mostly due to the fact that ANNs are trained in a non-deterministic way, but is also due to the fact that <strong>ANNs depend so heavily on state</strong>: two networks with the same exact architecture but different state can perform entirely different tasks. The same three-layer feed-forward neural network can be trained to steer a small robot or to distinguish cats from dogs.</p>
-		<p>So at least from an engineering point of view, a neural network is a black box. It is more meant to be used than to be understood. (Of course the engineer's point of view is different from the researcher's point of view &mdash; as much as the intentions of a Haskell programmer are different from a person who *maintains* Haskell and its compilers.)</p>
-		<p>We were saying that neural networks are black boxes. Engineers praise these black boxes because they basically <em>write the program for you</em>: if you want to calculate something for which you have tons of examples but no clear algorithm in mind, then just give these examples to a suitable ANN and store its state somewhere. This state (the "weights" of the network after it has been trained on the examples) <em>is</em> the computation needed to calculate what you want.</p>
-		<p>So... you can see that ANNs are the opposite of functional programming and yet they solve the same problem, the problem of <strong>computation</strong>: calculating an output, given some inputs.</p>
+			<h2>ANNs</h2>
+			<p>While functional programming wants to be stateless, ANNs are completely based on <strong>state</strong>: in an ANN, computation <em>is</em> state.</p>
+			<p>Engineers usually spend some effort into understanding what's happening in a neural network and why it is giving a certain output instead of another. This is mostly due to the fact that ANNs are trained in a non-deterministic way, but is also due to the fact that <strong>ANNs depend so heavily on state</strong>: two networks with the same exact architecture but different state can perform entirely different tasks. The same three-layer feed-forward neural network can be trained to steer a small robot or to distinguish cats from dogs.</p>
+			<p>So at least from an engineering point of view, a neural network is a black box. It is more meant to be used than to be understood. (Of course the engineer's point of view is different from the researcher's point of view &mdash; as much as the intentions of a Haskell programmer are different from a person who *maintains* Haskell and its compilers.)</p>
+			<p>We were saying that neural networks are black boxes. Engineers praise these black boxes because they basically <em>write the program for you</em>: if you want to calculate something for which you have tons of examples but no clear algorithm in mind, then just give these examples to a suitable ANN and store its state somewhere. This state (the "weights" of the network after it has been trained on the examples) <em>is</em> the computation needed to calculate what you want.</p>
+			<p>So... you can see that ANNs are the opposite of functional programming and yet they solve the same problem, the problem of <strong>computation</strong>: calculating an output, given some inputs.</p>
 
-		<h2>Read-write</h2>
-		<p>I would be tempted to say that an ANN is easier to write than to read, while a purely functional programming language is easier to read than to write. I'm not sure about this last statement (which is also not measurable anyway), but I'm gonna leave it here with the hope that someone can give me their thoughts on this topic.</p>
+			<h2>Read-write</h2>
+			<p>I would be tempted to say that an ANN is easier to write than to read, while a purely functional programming language is easier to read than to write. I'm not sure about this last statement (which is also not measurable anyway), but I'm gonna leave it here with the hope that someone can give me their thoughts on this topic.</p>
 
-		<h2>Summary</h2>
-		<p>To sum up:</p>
-		<ul>
-			<li>The problem of calculating an output given some inputs is known as the problem of computation.</li>
-			<li>The problem of computation can be solved with different <strong>models of computation</strong>.</li>
-			<li>Modern computer programs are best represented by purely functional programming. This approach suggests to first come up with a set of stateless computations, then apply the inputs to those computations to get an output.</li>
-			<li>The approach of artificial neural networks suggests to first apply the inputs to a set of stateful computations, then adjust the state of the network so that the behavior of the network looks closer to a certain set of examples.</li>
-			<li>I personally find that there is some kind of symmetry in these two approaches.</li>
-		</ul>
+			<h2>Summary</h2>
+			<p>To sum up:</p>
+			<ul>
+				<li>The problem of calculating an output given some inputs is known as the problem of computation.</li>
+				<li>The problem of computation can be solved with different <strong>models of computation</strong>.</li>
+				<li>Modern computer programs are best represented by purely functional programming. This approach suggests to first come up with a set of stateless computations, then apply the inputs to those computations to get an output.</li>
+				<li>The approach of artificial neural networks suggests to first apply the inputs to a set of stateful computations, then adjust the state of the network so that the behavior of the network looks closer to a certain set of examples.</li>
+				<li>I personally find that there is some kind of symmetry in these two approaches.</li>
+			</ul>
+		</article>
 	</main>
 
-	<p id="home">You can go <a href="..">back to the home page</a>.</p>
+	<footer>
+		<article id="home">
+			<p>You can go <a href="..">back to the home page</a>.</p>
+		</article>
+	</footer>
 </body>
 </html>
