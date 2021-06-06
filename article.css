@@ -1,9 +1,16 @@
-h1 {
-	font-style: italic;
-}
-
 article > h2 {
 	margin-top: 3em;
+}
+
+article {
+	text-align: justify;
+}
+
+@media only screen and (min-width: 600px) {
+	article {
+		margin: 5em 0.5em;
+		padding: 1em 3em;
+	}
 }
 
 footer {

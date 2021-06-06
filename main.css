@@ -26,6 +26,10 @@
 		--material-elevated: rgba(255, 255, 255, 0.1);
 		--accent-color: transparent;
 	}
+
+	body, h1, h2 {
+		font-weight: 300;
+	}
 }
 
 body {
@@ -82,7 +86,7 @@ main > p {
 article {
 	margin: 3em 0.5em;
 	padding: 1em;
-	border-radius: 0.5em;
+	border-radius: 0.4em;
 	background-color: var(--material);
 	box-shadow: var(--box-border-shadow);
 }
@@ -90,6 +94,16 @@ article {
 @media only screen and (min-width: 600px) {
 	article {
 		margin: 5em 0.5em;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	article:last-of-type {
+		margin-bottom: 0.5em;
+	}
+
+	main {
+		margin-bottom: 0;
 	}
 }
 
@@ -116,7 +130,7 @@ ul.boxes li {
 	margin-bottom: 1em;
 	position: relative;
 	list-style-type: none;
-	border-radius: 0.25em;
+	border-radius: 0.2em;
 	border-style: solid;
 	border-width: 1.5px;
 	border-color: var(--box-border-color);
