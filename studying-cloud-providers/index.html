@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>The Enthusiastic Historian's Approach to Terraform and Cloud Providers</title>
+    <meta name="author" content="Giorgio Giuffrè">
+    <meta name="description"
+        content="Learning a new cloud provider doesn't need to be a boring task. Take the approach of geography, history, etymology and philosophy to visualiza cloud concepts in insightful new ways.">
+    <meta name="keywords" content="state,stateful,stateless,neural,networks,functional,programming">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../main.css" type="text/css">
+    <link rel="stylesheet" href="../article.css" type="text/css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "inLanguage": "en",
+      "headline": "The Enthusiastic Historian's Approach to Terraform and Cloud Providers",
+      "abstract": "Learning a new cloud provider doesn't need to be a boring task. Take the approach of geography, history, etymology and philosophy to visualiza cloud concepts in insightful new ways.",
+      "datePublished": "2023-05-19T19:00:00+02:00",
+      "author": {
+          "@type": "Person",
+          "name": "Giorgio Giuffrè",
+          "url": "https://ggiuffre.github.io/"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>The Enthusiastic Historian's Approach to Terraform and Cloud Providers</h1>
+    </header>
+
+    <main>
+        <article>
+            <p>Learning how to use a specific cloud provider can feel a bit pointless. Why should you read documentation
+                and tutorials about AWS if in two years from now you might be using Azure or Alibaba Cloud?</p>
+            <p>In general many software engineers feel this &quot;pointlessness&quot; when reading the documentation of
+                a new tool. We enjoy solving interesting architectural problems more than reading the docs of a specific
+                technology.
+            </p>
+            <p>If you feel like this about Terraform, about existing config files written by someone else, or about AWS
+                and its myriad of services, then embrace the Enthusiastic Historian's approach to Terraform and cloud
+                providers:</p>
+            <ul>
+                <li>know your geography</li>
+                <li>study the history behind it</li>
+                <li>learn the standard language, no matter how mystical</li>
+                <li>research about etymology</li>
+                <li>embrace a theory before refuting it</li>
+            </ul>
+
+            <h2>Infrastructure Geography</h2>
+            <p>The infrastructure that your company is running on AWS os some other provider is not a dull network of
+                machines. It's an enchanted land with its own very peculiar geography! Learn its geography to better
+                visualize its concepts in your head.</p>
+            <p>By the way, when I say &quot;cloud infrastructure&quot; I mean the network of servers, databases,
+                gateways and
+                other components that your company is leasing from a cloud provider like AWS or Azure in order to run
+                its business.</p>
+            <p>Back to geography:</p>
+            <ul>
+                <li>The Internet is the world.</li>
+                <li>A VPC is a city surrounded by (fire)walls.</li>
+                <li>An EC2 instance is just a building. It can have many purposes: it can be an archive, it can be an
+                    office, or it can be a gate in the walls and even a well-guarded bastion!</li>
+                <li>An ECS cluster is a company with offices in many buildings.</li>
+                <li>Subnets are groupings of buildings that share the same access rule, either public or private
+                    access&mdash;more on this later.</li>
+                <li>NAT gateways are the entrance of private subnets.</li>
+                <li>An Internet gateway is the main gate of your city.</li>
+                <li>Routing is the infrastructure that connects buildings, i.e. roads and street signs.</li>
+                <li>Load balancers are policemen warding the traffic.</li>
+            </ul>
+            <p>Let's start with a bird's eye view. The <strong>Internet</strong> is the world, and a magical one as we
+                will see. It's made of many <strong>VPCs</strong>, which you can think of as cities, each ruled by a
+                wise king. In fact when you create an AWS account you're assigned a VPC, thus becoming the king of a
+                small empty city.</p>
+            <p>An <strong>EC2 instance</strong> is just a building. It can have many purposes: it can be an archive, it
+                can be an office, it can be a NAT gateway or many other useful things. With that in mind, you can see
+                an <strong>ECS cluster</strong> as a company that has offices in several buildings across the city. Each
+                EC2 building might host several offices, each one computing whatever its ECS company/cluster wants to.
+            </p>
+            <p>A <strong>subnet</strong> is a grouping of buildings that share the same access rule: either they're
+                normal buildings with a public address or they're buildings inside a privately-owned area like a
+                university campus, a company or a tennis club. With this image in mind, read the following sentence from
+                the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html">AWS documentation</a>:
+                <em>A subnet is a range of IP addresses in your VPC</em>.
+            </p>
+            <p><strong>NAT gateways</strong> and <strong>Internet gateways</strong> are doors, gates: a NAT gateway gets
+                you in and out of a subnet; an Internet gateway, on the other hand, gets you in and out of the city. The
+                <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">AWS documentation</a>
+                defines an Internet gateway as <em>A gateway that you attach to your VPC to enable communication between
+                    resources in your VPC and the internet</em>. The Internet gateway of a city is cool with anybody
+                entering and exiting the city, both locals and foreigners, as long as they respect the rules. NAT
+                gateways, on the other hand, are stricter: they can only be used by residents of their subnet.
+            </p>
+            <p>The purpose of gateways is related to (but different than) <strong>routing</strong>: while routing is the
+                infrastructure that connects buildings (roads and street signs), gateways are more like an address that
+                is advertised inside your subnet or VPC as the place to go if you want to get to a different subnet or
+                to the Internet. For example the NAT gateway of a private subnet is the only way residents of that
+                subnet can get out to the city (and back inside the subnet). The Internet gateway is the only way that
+                both locals and foreigners have to go in and out of the city.</p>
+            <p><strong>Load balancers</strong> are policemen warding the traffic&mdash;especially useful during rush
+                hour.</p>
+            <p>And so on. Build more of these geographic analogies in your head, and you will rule the cloud like a wise
+                king.</p>
+            <h3>The real world</h3>
+            <p>your VPC/city must live inside a &quot;region&quot;, a real-world location where AWS has clustered some
+                data centers. These data centers are the connection between the real world and the imaginary enchanted
+                world that we're exploring. Every data center is connected to the AWS private global network, which is
+                in turn connected to multiple Internet Service Providers (ISPs). Your users too are connected to an ISP,
+                through which they can connect to a data center where your VPC is hosted.</p>
+
+            <h2>History Studies</h2>
+            <p>Aside from geography, history can be insightful too.</p>
+            <p>I find it useful to start from the beginning: why do we even need such a network of machines?</p>
+            <p>A pragmatic way to answer this question is to think business: do we need to store data? train statistical
+                models? serve browser requests? send notifications via e-mail/SMS? authenticate users? Find out why it
+                would make sense to delegate such tasks to a cloud provider.</p>
+            <p>In my case, for example, my company's business is a tele-medicine service offered through a web app and a
+                mobile app. These apps have a back-end that should be able to persist data and send notifications
+                regularly or upon some event. We're using AWS. When I arrived, there were already existing Terraform
+                files and I wondered where to start reading. So I asked myself those pragmatic business questions from
+                above (wo we need to store data? send notifications? etcetera) and from those questions everything
+                unfolded, for example: yes, we need to store data. So there's got to be somewhere in the AWS console
+                (and in the Terraform files) a database. With a bit of searching you get to the right files, give a look
+                at the docs for the <code>aws_db_instance</code> resource type, and then start all over again with
+                another business question: do we need to send notifications? And so on.</p>
+            <p>Besides finding the resources that answer your business questions, can you also see how they reference
+                each other? What do those references express?</p>
+            <p>So you can understand a good deal of an existing cloud infratructure by just asking questions.</p>
+            <p>And these questions don't need to be exclusively about your company's business. They can also be
+                questions about why a cloud service has a certain name.</p>
+            <p>For example <strong>elastic IP addresses</strong> might sound like some &quot;marketing name&quot; for
+                regular static IPs. They're not. Asking the question of why they have such name will give you an idea of
+                the interesting problems that AWS engineers had to solve. In the case of elastic IPs, here's the deal:
+                they solve a problem that cannot be solved by only offering static IPs and dynamic IPs. Only offering
+                static IPs might lead to people buying a ton of IPs in block &quot;just in case&quot;, and then not
+                using them. On the other hand, only offering dynamic IPs makes it harder for machines to talk to each
+                other. &quot;Elastic IPs&quot; solve this problem: they are static IPs that are free if used, and not
+                free if unused. This encourages developers to only reserve IPs that they use, and to release unused ones
+                back to the AWS pool of available elastic IPs.</p>
+
+            <h2>Reading Terraform</h2>
+            <p>Terraform is just one technology among many, and again you might feel the same kind of discomfort that
+                you felt when trying to grasp the giganticness of AWS services: why should I learn Terraform if some
+                other technology will be around in a few years?</p>
+            <p>Here again it's helpful to look at this with the eyes of a historian, or perhaps a student of liguistics.
+            </p>
+            <p>You have right now the privilege of diving into a simple, almost &quot;primitive&quot; language a bit
+                like C was when people were still figuring out how to create a good programming language. In hindsight C
+                is an old, low-level language that requires you to know hardcore stuff like how to use registers and how
+                to allocate memory&mdash;in a certain sense it's a primitive version of Python or Java, which do all of
+                this for you.
+            </p>
+            <p>Wouldn't it have been thrilling to live in those Jurassic days when C was young? Maybe you've even lived
+                those days, if you're old enough. In any case, think about Terraform in this way. You have the
+                opportunity to learn a language that gives you quite a deep, low-level view on how a private network of
+                machines is built.</p>
+            <p>Moreover, Terraform has a beautiful quality: it's simple. Terraform, or rather HCL (Hascicorp
+                Configuration Language) is a simple syntax to declare an unordered set of resources. You can read HCL
+                code as a graph of resource that depend on each other. In fact this is what Terraform does: it reads the
+                current state of your application, reads the configuration files that you wrote (i.e. the desired state
+                of your application), builds a graph where resources are nodes and edges are dependencies, and then
+                transforms your graph into another graph that can be efficiently traversed to resolve the differences
+                between your config and the current state of your application.</p>
+
+            <h2>Icons Etymology</h2>
+            <p>The next &quot;technique&quot; to grokk the cloud is Icons Etymology, or how to read AWS icons (or the
+                icons of cloud services in general, not just in AWS).</p>
+            <p>When exploring a new field, some etymology can get you a long way: studying Latin and Ancient Greek in
+                school helped me with maths and philosophy.</p>
+            <p>Likewise, the field of cloud computing is young but its main words stem from &quot;old&quot; concepts
+                like databases, route tables, CPUs and lambda functions: an AWS RDS instance is just a (managed)
+                database; an AWS EC2 instance is basically a machine with a CPU and other regular things like memory and
+                peripherals; lambda functions in AWS are a way for you to run computations that don't require persistent
+                state, similarly to functions in lambda calculus.</p>
+            <p>So each cloud service usually has an icon that represents the &quot;old concept&quot; that this service
+                &quot;wraps&quot;.</p>
+            <p>The icon of AWS RDS is the classic three-disk tower that universally represents databases. Back in the
+                day when non-volatile memory was on magnetic disks, databases were just software reading from and
+                writing to a bunch of hard disks (more than 1 disk, for redundancy... think RAID). Technology changes
+                and SSDs are now the standard, but etymology stays: three disks represent a database.</p>
+            <p>Likewise, the symbol for AWS EC2 is a CPU because EC2 is a service that helps with computing.</p>
+            <p>Most other icons for cloud services and resources can be traced back to old concepts. Here are examples
+                from AWS icons:</p>
+            <ul>
+                <li>Internet gateways are open doors;</li>
+                <li>routers remind of the lines coming from different networks;</li>
+                <li>the AWS icon for a route table resource shows some IP addresses;</li>
+                <li>AWS Route 53 (a service dedicated to routing) has an icon with the same shape of the famous US route
+                    signs;</li>
+                <li>S3, the Simple Storage Service of AWS, is clearly symbolized with the simplest thing you can use to
+                    hold a heterogeneous collection of objects: a bucket.</li>
+            </ul>
+            <p>And so on.</p>
+            <p>In general, it's useful to pay attention to these icons and make sure they make sense to you.</p>
+
+            <h2>DevOps Lessons from Bertrand Russell</h2>
+            <p>The history of philosophy is a history of wrong ideas. So is science: a chain of theories where one
+                theory corrects the previous one. And so is the history of technologies: C inspired C++, and JavaScript
+                inspired TypeScript. Every technology improves on the technologies it's inspired from, and will be
+                improve by the technologies it inspires.</p>
+            <p>Terraform is just a technology, and one day it will be replaced by a better one. But understanding
+                Terraform is worth it, as is worth understanding the theories of a scientist or the ideas of a
+                philosopher, no matter how old or obsolete.</p>
+            <p>Bertrand Russell says this clearly:</p>
+            <figure>
+                <blockquote>
+                    <p>In studying a philosopher, the right attitude is neither reverence nor contempt, but first a kind
+                        of hypothetical sympathy, until it is possible to know what it feels like to believe in his
+                        theories, and only then a revival of the critical attitude, which should resemble, as far as
+                        possible, the state of mind of a person abandoning opinions which he has hitherto held. Contempt
+                        interferes with the first part of this process, and reverence with the second.</p>
+                </blockquote>
+                <figcaption>Bertrand Russell, <cite>History of Western Philosophy</cite>, 1945 George Allen & Unwin
+                    Ltd. (chapter 4, &quot;Heraclitus&quot;)</figcaption>
+            </figure>
+            <p>(And here's how it continues, in case you're interested to know more.)</p>
+            <figure>
+                <blockquote>
+                    <p>Two things are to be remembered: that a man whose opinions and theories are worth studying may be
+                        presumed to have had some intelligence, but that no man is likely to have arrived at complete
+                        and final truth on any subject whatever. When an intelligent man expresses a view which seems to
+                        us obviously absurd, we should not attempt to prove that it is somehow true, but we should try
+                        to understand how it ever came to seem true. This exercise of historical and psychological
+                        imagination at once enlarges the scope of our thinking, and helps us to realize how foolish many
+                        of our own cherished prejudices will seem to an age which has a different temper of mind.</p>
+                </blockquote>
+                <figcaption>Bertrand Russell, <cite>History of Western Philosophy</cite>, 1945 George Allen & Unwin
+                    Ltd. (chapter 4, &quot;Heraclitus&quot;)</figcaption>
+            </figure>
+            <p>That's the right mindset: learning yet another new technology is not a waste of time. It's a process that
+                can give you powerful insights, and even examples of things you might encounter somewhere else.</p>
+
+            <h2>Further Resources</h2>
+            <p>Among many others, the following resources helped me along the way:</p>
+            <ul>
+                <li>The video &quot;<a href="https://youtu.be/hiKPPy584Mg">AWS Networking Fundamentals</a>&quot; on
+                    YouTube</li>
+                <li>The <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">AWS documentation
+                        about VPC subnets</a></li>
+                <li>The video &quot;<a href="https://youtu.be/Ce3RNfRbdZ0">Applying Graph Theory to Infrastructure as
+                        Code</a>&quot;
+                    on YouTube</li>
+            </ul>
+        </article>
+    </main>
+
+    <footer>
+        <article id="home">
+            <p>You can go <a href="..">back to the home page</a>.</p>
+        </article>
+    </footer>
+</body>
+
+</html>
