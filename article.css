@@ -25,3 +25,9 @@ footer {
 #home a {
   text-decoration: underline;
 }
+
+picture img {
+  max-width: 100%;
+  display: block;
+  margin: 2em auto;
+}
