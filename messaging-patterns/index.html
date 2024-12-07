@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Task Distribution vs. Data Distribution</title>
+  <meta name="author" content="Giorgio Giuffrè">
+  <meta name="description"
+    content="Software systems send messages to other systems to distribute computation (&quot;task distribution&quot;) or to distribute information (&quot;data distribution&quot; or &quot;message distribution&quot;). This is an overview of different task distribution and data distribution patterns.">
+  <meta name="keywords" content="task,data,distribution,software,architecture,messaging,patterns,push-pull,pub-sub">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../main.css" type="text/css">
+  <link rel="stylesheet" href="../article.css" type="text/css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "inLanguage": "en",
+      "headline": "Task Distribution vs. Data Distribution",
+      "abstract": "Software systems send messages to other systems to distribute computation ("task distribution") or to distribute information ("data distribution" or "message distribution"). This is an overview of different task distribution and data distribution patterns.",
+      "datePublished": "2024-07-12T17:30:00+01:00",
+      "author": {
+          "@type": "Person",
+          "name": "Giorgio Giuffrè",
+          "url": "https://ggiuffre.github.io/"
+        }
+    }
+    </script>
+</head>
+
+<body>
+  <header>
+    <h1>Task Distribution vs. Data Distribution</h1>
+  </header>
+
+  <main>
+    <article>
+      <p>There are two reasons why a software system might want to send messages to another system:</p>
+      <ul>
+        <li>to distribute <strong>computation</strong></li>
+        <li>to distribute <strong>information</strong></li>
+      </ul>
+      <p>Distributing computation is known as &quot;task distribution&quot;: for example a load balancer.</p>
+      <p>Distributing information is known as &quot;data distribution&quot; or &quot;message distribution&quot;: for
+        example when different services subscribe to a topic.</p>
+      <p>Here are some important messaging patterns:</p>
+      <ul>
+        <li><strong>procedure call</strong> is a trivial form of task distribution to a single node, done either locally
+          or remotely with RPC</li>
+        <li>the <strong>push-pull pattern</strong> (aka message queue) is a distributed, asynchronous form of task
+          distribution</li>
+        <li>the <strong>pub-sub pattern</strong> is a form of data distribution</li>
+      </ul>
+      <p>Note that the push-pull pattern either distributes a task to a set of compute resources (fan-out only) or
+        partitions a task into smaller sub-tasks which then need to be aggregated to form a result (fan-out followed by
+        fan-in to a sink).</p>
+    </article>
+    <p>Disclaimer: my notes are usually a work-in-progress. Some might be incomplete or contain mistakes.</p>
+  </main>
+
+  <footer>
+    <article id="home">
+      <p>You can go <a href="..">back to the home page</a>.</p>
+    </article>
+  </footer>
+</body>
+
+</html>
